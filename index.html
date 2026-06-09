@@ -261,6 +261,143 @@
   }
   .wa-float:hover { transform: scale(1.08); }
   .wa-float svg { width: 26px; height: 26px; color: #fff; }
+
+  /* ============================================
+     MOBILE RESPONSIVE — max-width: 768px
+     Desktop styles above are untouched
+     ============================================ */
+  @media (max-width: 768px) {
+
+    /* NAV — hide links/icons, show logo only + CTA */
+    nav {
+      padding: 0 1.25rem;
+      height: 60px;
+    }
+    .nav-links { display: none; }
+    .nav-icons { display: none; }
+    .nav-cta {
+      padding: 9px 16px !important;
+      font-size: 12px !important;
+    }
+
+    /* HERO — stack vertically, image below text */
+    .hero { margin-top: 60px; }
+    .hero-grid {
+      grid-template-columns: 1fr;
+      min-height: unset;
+    }
+    .hero-left {
+      padding: 2.5rem 1.25rem 2rem;
+      order: 1;
+    }
+    .hero-image-wrap {
+      order: 2;
+      min-height: 260px;
+      max-height: 300px;
+      position: relative;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-title { font-size: 36px; margin-bottom: 1rem; }
+    .hero-body { font-size: 15px; margin-bottom: 1.75rem; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .btn-primary { width: 100%; text-align: center; padding: 14px 20px; }
+
+    /* STATS BAR */
+    .stats-bar {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1.5rem 1.25rem;
+    }
+    .stat-div { display: none; }
+    .stat-item { min-width: 40%; }
+
+    /* SECTIONS — tighten padding */
+    section { padding: 3.5rem 1.25rem; }
+
+    /* PRODUCTS — 1 column */
+    .products-grid { grid-template-columns: 1fr; }
+    .product-card { padding: 1.75rem 1.25rem; }
+
+    /* WHY ESSKAY — 1 column */
+    .why-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .why-experience-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.75rem 1.25rem;
+    }
+    .why-exp-num { font-size: 40px; }
+    .why-exp-right { font-size: 14px; }
+
+    /* HOW IT WORKS — 2 columns on mobile, 1 on very small */
+    .how-steps { grid-template-columns: 1fr 1fr; }
+    .how-step:not(:last-child)::after { display: none; }
+    .how-step { border-top: 1px solid rgba(255,255,255,0.08); }
+
+    /* FOUNDER — stack image above text */
+    .founder-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .founder-left {
+      min-height: 280px;
+      max-height: 320px;
+      overflow: hidden;
+    }
+    .founder-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .founder-stat-row { gap: 1.5rem; flex-wrap: wrap; }
+    .founder-headline { font-size: 28px; }
+    .founder-body { font-size: 15px; }
+
+    /* CONTACT — stack columns */
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .contact-headline { font-size: 26px; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-size: 16px; /* prevent iOS zoom on focus */
+    }
+
+    /* FOOTER — centre-stack everything */
+    footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1.25rem;
+      gap: 1rem;
+    }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .footer-note { font-size: 11px; }
+
+    /* WHATSAPP FLOAT — slightly smaller */
+    .wa-float {
+      width: 46px; height: 46px;
+      bottom: 1.25rem; right: 1.25rem;
+    }
+    .wa-float svg { width: 22px; height: 22px; }
+  }
+
+  /* Very small phones */
+  @media (max-width: 380px) {
+    .how-steps { grid-template-columns: 1fr; }
+    .hero-title { font-size: 30px; }
+    .stat-item { min-width: 100%; }
+  }
+
 </style>
 </head>
 <body>
@@ -282,7 +419,7 @@
     <a href="#how">How it works</a>
     <a href="#about">About</a>
     <div class="nav-icons">
-      <a href="https://linkedin.com/company/esskay-general-trading" target="_blank" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/company/esskayworld/" target="_blank" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
       <a href="https://www.instagram.com/esskay.world/" target="_blank" aria-label="Instagram">
@@ -584,7 +721,7 @@
     <a href="#contact">Contact</a>
   </div>
   <div class="footer-social">
-    <a href="https://linkedin.com/company/esskay-general-trading" target="_blank" aria-label="LinkedIn">
+    <a href="https://www.linkedin.com/company/esskayworld/" target="_blank" aria-label="LinkedIn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
     </a>
     <a href="https://www.instagram.com/esskay.world/" target="_blank" aria-label="Instagram">
